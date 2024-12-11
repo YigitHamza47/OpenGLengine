@@ -1,52 +1,51 @@
 OpenGL Engine
 
-Welcome to my OpenGL Engine project! This is a custom C++ engine built using OpenGL, featuring a 3D camera and a lighting system.
+Welcome to my OpenGL Engine project! This is a custom C++ engine built using OpenGL, featuring a 3D camera, a lighting system, and texture rendering.
 Features
 
     3D Camera: Navigate and view scenes in a 3D space.
     Lighting System: Implements basic light sources to enhance visual realism.
+    Texture Rendering: Adds detailed textures to objects for a more immersive visual experience.
     Core Rendering Pipeline: Set up for rendering 3D objects and environments.
 
 Getting Started
-
-Follow these steps to set up and run the project on a Windows environment.
 Prerequisites
 
-Ensure the following are installed on your system:
+Ensure the following are available on your system:
 
     Microsoft Visual Studio 2019 or later
     OpenGL 4.5 or higher
-    GLFW, GLM AND GLEW libraries (included in the External Libs folder)
+
+External Libraries
+
+This project relies on GLFW and GLM, which can be found in my GitHub repository:
+External Libs Repository
+
+    Clone or download the External Libs repository.
+    Place the External Libs folder one level above the OpenGLengine project directory.
 
 Project Structure
 
-The project assumes the following directory layout:
+The project assumes the following layout:
 
 c++/  
-├── External Libs/       # Contains GLFW, GLM AND GLEW libraries  
+├── External Libs/       # Contains GLFW and GLM libraries  
 ├── OpenGLengine/        # Project folder  
-    ├── src/             # Source code files  
-    ├── shaders/         # GLSL shader files  
-    ├── include/         # Header files  
-    ├── OpenGLengine.sln # Visual Studio solution file  
-    └── README.md        # Project documentation  
 
 Building and Running
-
-    Clone the repository:
-
-    git clone https://github.com/YigitHamza47/OpenGLengine.git  
-
-    Place the External Libs folder one level above the OpenGLengine project directory.
 
     Open the OpenGLengine.sln file in Visual Studio.
 
     Configure the project:
         Set the appropriate build configuration (Debug or Release).
-        Ensure the library paths for GLFW and GLM in the External Libs folder are correctly configured in the project settings.
+        Verify that the library paths for GLFW and GLM in the External Libs folder are correctly set in the project properties.
 
     Build and run the project directly from Visual Studio.
 
+Future Enhancements
+
+    Advanced lighting features, such as shadows and specular highlights
+    Interaction mechanics for a dynamic 3D environment
 
 Notes
 
