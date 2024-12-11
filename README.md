@@ -21,8 +21,8 @@ External Libraries
 This project relies on GLFW and GLM, which can be found in my GitHub repository:
 External Libs Repository
 
-    Clone or download the External Libs repository.
-    Place the External Libs folder one level above the OpenGLengine project directory.
+    download the External Libs repository.
+    Place the External Libs folder as showed in down place .
 
 Project Structure
 
