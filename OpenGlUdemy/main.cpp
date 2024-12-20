@@ -187,6 +187,10 @@ void CreateObjects()
 	Mesh* objC = new Mesh();
 	objC->CreateMesh(cubeVertices, cubeIndices, 192, 36);
 	meshList.push_back(objC);
+
+	Mesh* objC2 = new Mesh();
+	objC2->CreateMesh(cubeVertices, cubeIndices, 192, 36);
+	meshList.push_back(objC2);
 }
 
 void CreateShaders()
@@ -218,12 +222,12 @@ int main()
 	abazaparlak = Material(12.0f,269);
 
 	mainLight = DirectionalLight(1.0f, 1.0f, 1.0f,
-								0.0f, 0.3f,
+								0.0f, 0.0f,
 								0.0f, 0.0f, -1.0f);
 
 	unsigned int pointLightCount = 0;
 
-	pointLights[0] = PointLight(0.0f, 1.0f, 0.0f,
+	pointLights[0] = PointLight(0.0f, 0.0f, 1.0f,
 								0.0f, 1.0f,
 								-2.0f, 0.0f, 0.0f,
 								0.3f, 0.3f, 0.1f);
@@ -237,9 +241,15 @@ int main()
 
 	
 	
-	pointLights[2] = PointLight(0.1f, 0.8f, 1.0f,
+	pointLights[2] = PointLight(0.1f, 0.0f, 1.0f,
 								0.0f, 1.0f,
-								-4.0f, 0.0f,-6.0f,
+								2.0f, 0.0f,-6.0f,
+								0.3f, 0.2f, 0.1f);
+	pointLightCount++;
+
+	pointLights[3] = PointLight(0.1f, 1.0f, 1.0f,
+								0.0f, 1.0f,
+								2.0f, 0.0f, 6.0f,
 								0.3f, 0.2f, 0.1f);
 	pointLightCount++;
 
@@ -333,6 +343,14 @@ int main()
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(2.0f, 0.0f, -6.0f));
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		PlainTexture.UseTexture();
+		abazaparlak.UseMaterial(uniformSpecularIntensity, uniformShininess);
+		meshList[7]->RenderMesh();
+		
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(2.0f, 0.0f, 6.0f));
+		model = glm::scale(model, glm::vec3(5.0f,10.0f,1.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		PlainTexture.UseTexture();
 		abazaparlak.UseMaterial(uniformSpecularIntensity, uniformShininess);
