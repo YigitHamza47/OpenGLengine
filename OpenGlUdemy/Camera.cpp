@@ -31,6 +31,10 @@ void Camera::keyControl(bool* keys, GLfloat deltaTime) {
     if (keys[GLFW_KEY_D]) {
         position += right * velocity;
     }
+
+    if (keys[GLFW_KEY_LEFT_SHIFT]) {
+        moveSpeed = 1;
+    }
 }
 
 
